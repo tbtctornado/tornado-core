@@ -1,0 +1,20 @@
+{
+  "name": "btctornado",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ benesjan/btc-tornado",
+    "create-local": "graph create --node http://localhost:8020/ benesjan/btc-tornado",
+    "remove-local": "graph remove --node http://localhost:8020/ benesjan/btc-tornado",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 benesjan/btc-tornado"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btctornado/tornado-core.git"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-ts": "^0.18.1"
+  }
+}

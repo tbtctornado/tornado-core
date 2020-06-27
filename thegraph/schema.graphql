@@ -1,0 +1,4 @@
+type AnonymitySet @entity {
+    id: ID! # Ethereum address of the tornado contract
+    size: BigInt! # the size of anonymity set
+}

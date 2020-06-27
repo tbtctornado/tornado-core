@@ -1,0 +1,66 @@
+specVersion: 0.0.2
+description: BTC Tornado
+repository: https://github.com/btctornado/tornado-core
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: BTC_Tornado_0.001
+    network: ropsten
+    source:
+      address: "0x750be934a9e3D0e3Ea53D5404637A536c0CdDe68"
+      abi: ERC20Tornado
+      startBlock: 8180213
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AnonymitySet
+      abis:
+        - name: ERC20Tornado
+          file: ./abis/ERC20Tornado.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: BTC_Tornado_0.01
+    network: ropsten
+    source:
+      address: "0x70a3d78447FA3482003A64288a7905b581Ab21b5"
+      abi: ERC20Tornado
+      startBlock: 8180205
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AnonymitySet
+      abis:
+        - name: ERC20Tornado
+          file: ./abis/ERC20Tornado.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: BTC_Tornado_0.1
+    network: ropsten
+    source:
+      address: "0xA467352aB675F5d0E552bF2c17731f14Ac9E5416"
+      abi: ERC20Tornado
+      startBlock: 8180187
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AnonymitySet
+      abis:
+        - name: ERC20Tornado
+          file: ./abis/ERC20Tornado.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+      file: ./src/mapping.ts
