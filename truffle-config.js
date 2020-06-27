@@ -60,6 +60,15 @@ module.exports = {
       // timeoutBlocks: 200,
       skipDryRun: true
     },
+    ropsten: {
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://ropsten.infura.io/v3/97c8bf358b9942a9853fab1ba93dc5b3'),
+      network_id: 3,
+      gas: 6000000,
+      gasPrice: utils.toWei('1', 'gwei'),
+      // confirmations: 0,
+      // timeoutBlocks: 200,
+      skipDryRun: true
+    },
     mainnet: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'http://ethereum-rpc.trustwalletapp.com'),
       network_id: 1,
@@ -95,12 +104,6 @@ module.exports = {
         },
         // evmVersion: "byzantium"
       }
-    },
-    external: {
-      command: 'node ./compileHasher.js',
-      targets: [{
-        path: './build/Hasher.json'
-      }]
     }
   }
 }
